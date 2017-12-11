@@ -96,11 +96,12 @@ const listingsArray = [
 class App extends Component {
   state = {
     listings: listingsArray,
-    selectedListing: null
+    selectedListing: null,
+    formReviewActive: false
   }
 
   render() {
-    const { listings, selectedListing } = this.state
+    const { listings, selectedListing, formReviewActive } = this.state
 
     return (
       <div className="App container-fluid">
@@ -109,12 +110,16 @@ class App extends Component {
           <ListingPage
             listing={selectedListing}
             onClickBackToListings={this.onClickBackToListings}
+            onClickWriteReview={this.onClickToggleWriteReview}
+            formReviewActive={formReviewActive}
+            onFormSubmitWriteReview={this.onFormSubmitWriteReview}
           />
         ) : (
+          !!listings ? (
           <Listings
             listings={listings}
             onClickViewListing={this.onClickViewListing}
-          />
+          /> ) : ( <div>Loading...</div> )
         )}
       </div>
     )
@@ -135,6 +140,34 @@ class App extends Component {
     /* Clear the selected listing */
     this.setState({
       selectedListing: null
+    })
+  }
+
+  onClickToggleWriteReview = () => {
+    /* Show Review Form */
+    this.setState( prevState => {
+      const prevFormReviewActive = prevState.formReviewActive
+      return { formReviewActive: !prevFormReviewActive }
+    })
+  }
+  
+  onFormSubmitWriteReview = data => {
+    const { listings, selectedListing } = this.state
+    const review = {...data}
+
+    /* Add review to a listings review list */
+    const newListings = listings.map( listing => {
+      if(listing._id === selectedListing._id) {
+        const copy = {...listing}
+        copy.reviews.push(review)
+        return copy
+      }
+      return listing
+    })
+
+    /* New listings */
+    this.setState({
+      listings: newListings
     })
   }
 }
