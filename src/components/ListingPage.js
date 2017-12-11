@@ -1,5 +1,8 @@
 import React from 'react'
+/* Helpers */
 import { formatNumberToCurrency } from '../helpers/currency'
+/* Components */
+import PhotosList from './PhotosList'
 
 const ListingPage = ({
   listing,
@@ -14,6 +17,9 @@ const ListingPage = ({
       <button className='btn btn-primary mr-1'>Book Now</button>
       <button className='btn btn-primary' onClick={onClickBackToListings}>Back</button>
       <h3>Photos: {!!listing.photos && listing.photos.length}</h3>
+      {!!listing.photos && (
+        <PhotosList photos={listing.photos} />
+      )}
       <h3>Reviews: {!!listing.reviews && listing.reviews.length}</h3>
     </div>
   )

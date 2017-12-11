@@ -16,6 +16,16 @@ const listingsArray = [
         imageUrl:
           'https://d2mldj1bh8howu.cloudfront.net/_novaimg/2523411-797881_0_131_1600_800_1400_700.rc.jpg',
         imageCaption: 'Hotel Room'
+      },
+      {
+        imageUrl:
+          'https://d2mldj1bh8howu.cloudfront.net/_novaimg/2523411-797881_0_131_1600_800_1400_700.rc.jpg',
+        imageCaption: 'Hotel Room'
+      },
+      {
+        imageUrl:
+          'https://d2mldj1bh8howu.cloudfront.net/_novaimg/2523411-797881_0_131_1600_800_1400_700.rc.jpg',
+        imageCaption: 'Hotel Room'
       }
     ],
     reviews: [
@@ -100,9 +110,7 @@ class App extends Component {
   /* Event Handlers */
   onClickViewListing = (event, listing) => {
     event.preventDefault()
-    const { listings } = this.state
     const selectedListing = {...listing}
-
     /* Set the selected listing to the state */
     this.setState({
       selectedListing

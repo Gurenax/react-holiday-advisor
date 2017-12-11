@@ -25,13 +25,12 @@ const ListingItem = ({ listing, onClickViewListing }) => {
           </h5>
         </div>
         <p className="card-text">{listing.location}</p>
-        <a
-          href="#"
+        <button
           className="btn btn-primary"
           onClick={event => onClickViewListing(event, listing)}
         >
           View Listing
-        </a>
+        </button>
       </div>
     </div>
   )
