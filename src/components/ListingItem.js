@@ -10,7 +10,7 @@ const ListingItem = ({
       <div className="card-body">
         <h4 className="card-title">{listing.name}</h4>
         <p className="card-text">{listing.description}</p>
-        <a href="#" className="btn btn-primary" name={listing._id} onClick={onClickViewListing} >View Listing</a>
+        <a href="#" className="btn btn-primary" onClick={ (event) => onClickViewListing(event, listing) } >View Listing</a>
       </div>
     </div>
   )
