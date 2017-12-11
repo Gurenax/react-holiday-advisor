@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatNumberToCurrency } from '../helpers/currency'
 
 const ListingPage = ({
   listing,
@@ -8,7 +9,7 @@ const ListingPage = ({
     <div>
       <img src={listing.photos[0].imageUrl} alt={listing.photos[0].imageCaption} height={200} />
       <h1>{listing.name}</h1>
-      <h2>{listing.pricePerNight}</h2>
+      <h2>{formatNumberToCurrency(listing.pricePerNight,'AUD')}</h2>
       <p>{listing.description}</p>
       <button className='btn btn-primary mr-1'>Book Now</button>
       <button className='btn btn-primary' onClick={onClickBackToListings}>Back</button>
