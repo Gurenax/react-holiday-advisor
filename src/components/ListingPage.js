@@ -10,7 +10,7 @@ const ListingPage = ({
       <h1>{listing.name}</h1>
       <h2>{listing.pricePerNight}</h2>
       <p>{listing.description}</p>
-      <button className='btn btn-primary'>Book Now</button>
+      <button className='btn btn-primary mr-1'>Book Now</button>
       <button className='btn btn-primary' onClick={onClickBackToListings}>Back</button>
       <h3>Photos: {!!listing.photos && listing.photos.length}</h3>
       <h3>Reviews: {!!listing.reviews && listing.reviews.length}</h3>

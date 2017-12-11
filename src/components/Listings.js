@@ -7,7 +7,6 @@ const Listings = ({
 }) => {
   return (
     <div>
-      <h1>Listings</h1>
       <div className='d-flex flex-wrap'>
       {
         listings.map( listingItem => (
