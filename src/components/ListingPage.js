@@ -3,6 +3,7 @@ import React from 'react'
 import { formatNumberToCurrency } from '../helpers/currency'
 /* Components */
 import PhotosList from './PhotosList'
+import ReviewList from './ReviewList'
 
 const ListingPage = ({
   listing,
@@ -21,6 +22,9 @@ const ListingPage = ({
         <PhotosList photos={listing.photos} />
       )}
       <h3>Reviews: {!!listing.reviews && listing.reviews.length}</h3>
+      {!!listing.reviews && (
+        <ReviewList reviews={listing.reviews} />
+      )}
     </div>
   )
 }
