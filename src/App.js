@@ -13,16 +13,19 @@ const listingsArray = [
     description: 'A nice hotel to sleep in',
     photos: [
       {
+        _id: 'p1',
         imageUrl:
           'https://d2mldj1bh8howu.cloudfront.net/_novaimg/2523411-797881_0_131_1600_800_1400_700.rc.jpg',
         imageCaption: 'Hotel Room'
       },
       {
+        _id: 'p2',
         imageUrl:
           'https://d2mldj1bh8howu.cloudfront.net/_novaimg/2523411-797881_0_131_1600_800_1400_700.rc.jpg',
         imageCaption: 'Hotel Room'
       },
       {
+        _id: 'p3',
         imageUrl:
           'https://d2mldj1bh8howu.cloudfront.net/_novaimg/2523411-797881_0_131_1600_800_1400_700.rc.jpg',
         imageCaption: 'Hotel Room'
@@ -30,6 +33,7 @@ const listingsArray = [
     ],
     reviews: [
       {
+        _id: 'r1',
         user: 'Alessio',
         description: 'I love the coffee here',
         rating: 4.5
@@ -44,6 +48,7 @@ const listingsArray = [
     description: 'Holiday like a king',
     photos: [
       {
+        _id: 'p4',
         imageUrl:
           'https://s-ec.bstatic.com/images/hotel/max1024x768/106/106485456.jpg',
         imageCaption: 'Dining Room'
@@ -51,6 +56,7 @@ const listingsArray = [
     ],
     reviews: [
       {
+        _id: 'r2',
         user: 'John',
         description: 'The food is great',
         rating: 4.7
@@ -65,6 +71,7 @@ const listingsArray = [
     description: 'Not much land but a lot of heart.',
     photos: [
       {
+        _id: 'p5',
         imageUrl:
           'https://www.slh.com/globalassets/hotels/v/vahine-island/vahine_island_hurfpvi_hero_2.jpg',
         imageCaption: 'Vahine Island'
@@ -72,6 +79,7 @@ const listingsArray = [
     ],
     reviews: [
       {
+        _id: 'r3',
         user: 'Nisal',
         description: 'Hehhheheh',
         rating: 5
