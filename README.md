@@ -1,5 +1,8 @@
 # React Holiday Advisor
 
+## Figma
+![](/docs/images/figma.png)
+
 ## State
 ```javascript
 state = {
@@ -37,6 +40,7 @@ state = {
   - ReviewsList
     - ReviewItem
   - ReviewForm
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
