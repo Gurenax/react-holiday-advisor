@@ -21,7 +21,7 @@ state = {
     photos: [{
       imageUrl,
       imageCaption
-    }]
+    }],
     reviews: [{
       user,
       descriptiong,
