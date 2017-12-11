@@ -3,7 +3,7 @@ import './App.css'
 /* Components */
 import Listings from './components/Listings'
 import ListingPage from './components/ListingPage'
-
+import SearchForm from './components/SearchForm'
 /* Helpers */
 const scrollToTop = window => {
   window.scrollTo(0, 0)
@@ -95,17 +95,24 @@ const listingsArray = [
 
 class App extends Component {
   state = {
+    search: {
+      keywords: '',
+      priceRange: '',
+      location: ''
+    },
     listings: listingsArray,
     selectedListing: null,
     formReviewActive: false
   }
 
   render() {
-    const { listings, selectedListing, formReviewActive } = this.state
+    const { listings, selectedListing, formReviewActive, search } = this.state
 
     return (
       <div className="App container-fluid">
         <h1>React Holiday Advisor</h1>
+        <SearchForm search={search} onChangeSearchListings={this.onChangeSearchListings} />
+
         {!!selectedListing ? (
           <ListingPage
             listing={selectedListing}
@@ -168,6 +175,29 @@ class App extends Component {
     /* New listings */
     this.setState({
       listings: newListings
+    })
+  }
+
+  onChangeSearchListings = (event) => {
+    const keywords = event.target.value
+    let listings = listingsArray // All listings
+    
+    this.setState( prevState => {
+      /* Filter listings by keyword */
+      if(keywords.trim()!=='') {
+        const prevListings = [...prevState.listings]
+        listings = prevListings.filter( listing => {
+          return listing.name.match(new RegExp(keywords+'.*','ig'))
+        })
+      }
+      
+      /* Set filtered listings and keyword */
+      return {
+        listings,
+        search: {
+          keywords
+        }
+      }
     })
   }
 }
