@@ -27,7 +27,7 @@ const ListingItem = ({ listing, onClickViewListing }) => {
         <p className="card-text">{listing.location}</p>
         <button
           className="btn btn-primary"
-          onClick={event => onClickViewListing(event, listing)}
+          onClick={() => onClickViewListing(listing)}
         >
           View Listing
         </button>

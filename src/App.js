@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
-// import logo from './logo.svg';
 import './App.css'
+/* Components */
 import Listings from './components/Listings'
 import ListingPage from './components/ListingPage'
+
+/* Helpers */
+const scrollToTop = window => {
+  window.scrollTo(0, 0)
+}
 
 const listingsArray = [
   {
@@ -116,17 +121,17 @@ class App extends Component {
   }
 
   /* Event Handlers */
-  onClickViewListing = (event, listing) => {
-    event.preventDefault()
-    const selectedListing = {...listing}
+  onClickViewListing = listing => {
+    const selectedListing = { ...listing }
+    scrollToTop(window)
     /* Set the selected listing to the state */
     this.setState({
       selectedListing
     })
   }
 
-  onClickBackToListings = event => {
-    event.preventDefault()
+  onClickBackToListings = () => {
+    scrollToTop(window)
     /* Clear the selected listing */
     this.setState({
       selectedListing: null
