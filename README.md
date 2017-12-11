@@ -34,6 +34,7 @@ state = {
 
 ## Components
 - Listings
+  - ListingItem
 - ListingPage
   - BookingForm
   - PhotosList
